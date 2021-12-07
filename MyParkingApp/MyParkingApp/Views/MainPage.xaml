@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MyParkingApp.Views.MainPage"
+             Title="{Binding Title}">
+
+    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Vertical">
+        <Picker ItemsSource="{Binding Locations}" ItemDisplayBinding="{Binding Description}" SelectedItem="{Binding ItemLocation}" HorizontalOptions="FillAndExpand"/>
+        <Label Text="{Binding StatusMessage}" HorizontalOptions="FillAndExpand"/>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+            <Label Text="Parking Space:" HorizontalOptions="FillAndExpand"/>
+            <Entry Text="{Binding SpaceID}"  HorizontalOptions="FillAndExpand" WidthRequest="100" />
+         
+
+        </StackLayout>
+        <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" Orientation="Horizontal">
+            <Button Command="{Binding AddCommand}" Text="+"/>
+            <Button Command="{Binding RemoveCommand}" Text="-"/>
+        </StackLayout>
+    </StackLayout>
+</ContentPage> 
